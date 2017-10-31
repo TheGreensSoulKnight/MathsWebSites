@@ -3,3 +3,11 @@
 public/
 node_modules/
 npm-debug.log
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.npm/
+.profile
+.viminfo
+
