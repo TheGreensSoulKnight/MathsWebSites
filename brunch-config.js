@@ -16,7 +16,7 @@ module.exports = {
     },
     vue: {
       extractCSS: true,
-      out: '/public/css/style.css'
+      out: './public/style.css'
     }
   }
 }
