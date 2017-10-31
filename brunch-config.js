@@ -28,6 +28,9 @@ module.exports = {
 		vue: {
 			extractCSS: true,
 			out: './public/css/style.css'
+		},
+		cleancss: {
+			level: 0
 		}
 	}
 }
