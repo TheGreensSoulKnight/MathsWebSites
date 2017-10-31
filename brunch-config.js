@@ -13,6 +13,10 @@ module.exports = {
   plugins: {
     babel: {
       presets: ['es2015']
+    },
+    vue: {
+      extractCSS: true,
+      out: './public/css/style.css'
     }
   }
 }
