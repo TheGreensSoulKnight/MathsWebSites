@@ -2,17 +2,20 @@
 
     <div class="row main-container-index">
         <ftp-view></ftp-view>
+        <aside-view></aside-view>
     </div>
 
 </template>
 
 <script>
     import FtpView from './FtpView.vue'
+    import AsideView from './AsideView.vue'
 
     export default {
     	name: 'Index',
         components: {
-			FtpView
+			FtpView,
+            AsideView
         },
         watch: {
     		'$route' (to, from) {
@@ -24,14 +27,6 @@
 </script>
 
 <style lang="scss">
-
-    a {
-        color: var(--link-color);
-        text-decoration: none;
-        &:visited {
-            color: var(--link-color)
-        }
-    }
 
     .mg-t-10 {
         margin-top: 10px

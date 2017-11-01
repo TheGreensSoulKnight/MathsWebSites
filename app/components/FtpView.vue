@@ -5,7 +5,9 @@
             <div class="col-xs-12 header-ftp-view center-xs pdg-t-15 pdg-b-15">
                 <div class="row">
                     <div class="col-xs-2 center-xs pointer" v-show="!isBaseRoute">
-                        <i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i>
+                        <router-link :to="previous">
+                            <i class="fa fa-chevron-left fa-lg" aria-hidden="true" @click="$store.dispatch('transitioningFtpView', { route: $route, routerLink: previous })"></i>
+                        </router-link>
                     </div>
                     <div class="col-xs-8 center-xs medium" :class="{ 'col-xs-offset-2': isBaseRoute }" v-text="$store.state.ftp.currentDirectory.name"></div>
                     <div class="col-xs-2 center-xs"></div>
@@ -40,6 +42,11 @@
             },
             transition () {
 				return this.$store.state.ftp.canTransition
+            },
+            previous () {
+    			const pathLength = this.$route.path.split('/').length
+                const previousPath = this.$route.path.split('/', pathLength - 1).join('/')
+    			return previousPath ? previousPath : '/'
             }
         },
         methods: {

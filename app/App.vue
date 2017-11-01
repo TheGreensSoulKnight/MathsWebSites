@@ -73,4 +73,12 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale
     }
+
+    a {
+        color: var(--link-color);
+        text-decoration: none;
+        &:visited {
+            color: var(--link-color)
+        }
+    }
 </style>
