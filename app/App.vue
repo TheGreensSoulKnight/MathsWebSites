@@ -1,12 +1,20 @@
 <template>
     <div id="app">
-        <router-view></router-view>
+        <div class="col-xs-12">
+            <nav-bar></nav-bar>
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
 <script>
+	import NavBar from './components/NavBar.vue'
+
 	export default {
-		name: 'app'
+		name: 'app',
+        components: {
+			NavBar
+        }
 	}
 
 </script>
@@ -19,11 +27,32 @@
 
     :root {
         --nav-bar-background-color: #3D546E;
-        --font-color: white;
+        --nav-bar-color: white;
+        --link-color: white;
+        --font-color: black;
         --font-family: 'Dosis', sans-serif;
         --default-font-size: 1rem;
         --high-font-size: 1.5rem;
-        --medium-font-size: 1.25rem
+        --medium-font-size: 1.25rem;
+        --similar-white-color: white;
+        --border-light-grey-color: #B2B2B2;
+        --light-grey-color: #B2B2B2
+    }
+
+    .high {
+        font-size: var(--high-font-size)
+    }
+
+    .medium {
+        font-size: var(--medium-font-size)
+    }
+
+    .default {
+        font-size: var(--default-font-size)
+    }
+
+    .light-grey-text {
+        color: var(--light-grey-color)
     }
 
     html,

@@ -4,7 +4,11 @@
         <div class="col-xs-12 col-md-10 col-md-offset-1">
             <div class="row">
                 <div class="col-xs-4 col-lg-3 center-xs">
-                    <router-link :to="{ name: 'Index' }">DOCS</router-link>
+                    <router-link to="/">
+                        <div @click="$store.dispatch('transitioningFtpView', { route: $route, routerLink: '/' })">
+                            DOCS
+                        </div>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -24,7 +28,11 @@
 
     .nav-bar {
         background-color: var(--nav-bar-background-color);
-        font-size: var(--high-font-size)
+        color: var(--nav-bar-color);
+        font-size: var(--high-font-size);
+        & a {
+            color: var(--nav-bar-color)
+        }
     }
 
 </style>

@@ -1,18 +1,23 @@
 <template>
 
-    <div class="col-xs-12">
-        <nav-bar></nav-bar>
+    <div class="row main-container-index">
+        <ftp-view></ftp-view>
     </div>
 
 </template>
 
 <script>
-    import NavBar from './NavBar.vue'
+    import FtpView from './FtpView.vue'
 
     export default {
     	name: 'Index',
         components: {
-    		NavBar
+			FtpView
+        },
+        watch: {
+    		'$route' (to, from) {
+    			this.$store.dispatch('registerNextRoute', to)
+            }
         }
     }
 
@@ -21,10 +26,10 @@
 <style lang="scss">
 
     a {
-        color: var(--font-color);
+        color: var(--link-color);
         text-decoration: none;
         &:visited {
-            color: var(--font-color)
+            color: var(--link-color)
         }
     }
 
@@ -171,6 +176,15 @@
     }
     .pdg-r-25 {
         padding-right: 25px
+    }
+    .main-container-index {
+        height: calc(100vh - 71px);
+    }
+    .ps-re {
+        position: relative
+    }
+    .pointer {
+        cursor: pointer
     }
 
 </style>

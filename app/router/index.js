@@ -8,7 +8,7 @@ export default new Router({
 	mode: 'history',
 	routes: [
 	{
-		path: '/',
+		path: '/:year?/:class?/:dir?/:udir?',
 		name: 'Index',
 		component: Index
 	}
